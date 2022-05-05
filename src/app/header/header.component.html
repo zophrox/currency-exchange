@@ -1,0 +1,6 @@
+<p>header works!</p>
+Currency name: <input type="text" [(ngModel)]="currencyName">
+
+<div *ngIf="response">
+    <p>Amoumt: {{response[0].buy}}</p>
+</div>
