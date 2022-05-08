@@ -25,9 +25,7 @@ export interface Product {
 })
 export class HeaderComponent implements OnInit {
   usd: number;
-
   eur: number;
-
   date: any = new Date();
 
   constructor(
@@ -39,12 +37,12 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.rateService.getRate()
+    this.rateService.getRate();
     this.rateService.usd.subscribe((usd) => {
-      this.usd = usd
+      this.usd = usd;
     });
     this.rateService.eur.subscribe((eur) => {
-      this.eur = eur
+      this.eur = eur;
     });
 
     // this.http

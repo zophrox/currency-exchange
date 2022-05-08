@@ -23,10 +23,10 @@ export class RateService {
       .subscribe((response: Product[]) => {
         response.forEach((v) => {
           if (v.txt === 'Долар США') {
-            this.usd.emit(v.rate);
+            this.usd.emit(+(v.rate.toFixed(2)));
           }
           else if (v.txt === 'Євро') {
-            this.eur.emit(v.rate);
+            this.eur.emit(+(v.rate.toFixed(2)));
           }
         });
       });

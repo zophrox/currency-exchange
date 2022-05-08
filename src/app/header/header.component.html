@@ -1,23 +1,20 @@
+
+<h1>Currency Converter</h1>
+
+
+
 <div class="date">
   <p>{{ date }}</p>
 </div>
 
 <div class="viewCourse">
   <div>
-    <p>USD</p>
-    <p>{{ usd }}</p>
+    <p class="currencyName">USD</p>
+    <p class="currencyAmount">{{ usd }}</p>
   </div>
   <div>
-    <p>EUR</p>
-    <p>{{ eur }}</p>
+    <p class="currencyName">EUR</p>
+    <p class="currencyAmount">{{ eur }}</p>
   </div>
 </div>
-<!-- <mat-grid-list cols="4" rowHeight="100px">
-    <mat-grid-tile
-        *ngFor="let tile of tiles"
-        [colspan]="tile.cols"
-        [rowspan]="tile.rows"
-        [style.background]="tile.color">
-      {{tile.text}}
-    </mat-grid-tile>
-  </mat-grid-list> -->
+
