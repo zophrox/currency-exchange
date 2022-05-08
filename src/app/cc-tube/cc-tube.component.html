@@ -1,0 +1,54 @@
+<p>Конвертер валют</p>
+<hr />
+
+<mat-form-field appearance="hefdsa">
+  <mat-label>Select an option</mat-label>
+  <mat-select
+    [(ngModel)]="selected"
+    [(value)]="selected"
+    (ngModelChange)="changeSelect1($event)"
+  >
+    <mat-option value="eur">eur</mat-option>
+    <mat-option value="usd">usd</mat-option>
+    <mat-option value="ua" selected>ua</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<p>You selected: {{ selected }}</p>
+
+<hr />
+
+
+<input
+  type="number"
+  (ngModelChange)="changeInputOne($event)"
+  [(ngModel)]="inputOne"
+  placeholder="0"
+/>
+<br />
+<br />
+<hr>
+
+<mat-form-field appearance="hefdsa">
+  <mat-label>Select an option</mat-label>
+  <mat-select
+    [(ngModel)]="selected2"
+    [(value)]="selected2"
+    (ngModelChange)="changeSelect2($event)"
+  >
+    <mat-option value="eur">eur</mat-option>
+    <mat-option value="usd">usd</mat-option>
+    <mat-option value="ua" selected2>ua</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<p>You selected: {{ selected2 }}</p>
+
+<hr>
+<br />
+<input
+  type="number"
+  (ngModelChange)="changeInputTwo($event)"
+  [(ngModel)]="inputTwo"
+  placeholder="0"
+/>
