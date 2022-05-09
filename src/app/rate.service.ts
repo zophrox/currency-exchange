@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 
-export interface Product {
+export interface CurrencyInformation {
   r030: number;
   txt: string;
   rate: number;
@@ -20,13 +20,12 @@ export class RateService {
   getRate() {
     this.http
       .get('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json')
-      .subscribe((response: Product[]) => {
+      .subscribe((response: CurrencyInformation[]) => {
         response.forEach((v) => {
           if (v.txt === 'Долар США') {
-            this.usd.emit(+(v.rate.toFixed(2)));
-          }
-          else if (v.txt === 'Євро') {
-            this.eur.emit(+(v.rate.toFixed(2)));
+            this.usd.emit(+v.rate.toFixed(2));
+          } else if (v.txt === 'Євро') {
+            this.eur.emit(+v.rate.toFixed(2));
           }
         });
       });
