@@ -7,7 +7,7 @@ import { RateService } from '../rate.service';
   styleUrls: ['./cc-tube.component.scss'],
 })
 export class CcTubeComponent implements OnInit {
-  inputOne: number;
+  inputOne: number = 0;
   inputTwo: number = 0;
   amount: number;
   usd: number;
@@ -110,6 +110,7 @@ export class CcTubeComponent implements OnInit {
     } else {
       this.inputTwo = +(change*this.amount).toFixed(2);
     }
+    console.log('hello')
   }
   changeInputTwo(change) {
     if (this.selectRate2 === 'ua') {

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import{HttpClientModule} from '@angular/common/http'
 
-
+import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select'
 import {MatInputModule} from '@angular/material/input';
 import { AppComponent } from './app.component';
@@ -23,7 +23,8 @@ import { CcTubeComponent } from './cc-tube/cc-tube.component';
     FormsModule,
     BrowserAnimationsModule,
     MatSelectModule,
-    MatInputModule
+    MatInputModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
