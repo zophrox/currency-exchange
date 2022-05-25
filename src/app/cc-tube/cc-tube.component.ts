@@ -7,29 +7,29 @@ import { RateService } from '../rate.service';
   styleUrls: ['./cc-tube.component.scss'],
 })
 export class CcTubeComponent implements OnInit {
-  inputOne: number = 0;
-  inputTwo: number = 0;
+  inputLeft: number = 0;
+  inputRight: number = 0;
   multiply: number;
 
-  selectRateOne: string;
-  selectRateTwo: string;
+  selectRateLeft: string;
+  selectRateRight: string;
 
-  currencySelectionOne: string = 'Please choose a currency';
-  currencySelectionTwo: string = 'Please choose a currency';
+  currencySelectionLeft: string = 'Please choose a currency';
+  currencySelectionRight: string = 'Please choose a currency';
   constructor(private rateService: RateService) {}
 
   ngOnInit(): void {}
 
   changeCurrencyOne(value) {
-    this.selectRateOne = value;
+    this.selectRateLeft = value;
 
-    this.multiply = this.rateService.changeCurrency(value, this.selectRateTwo);
+    this.multiply = this.rateService.changeCurrency(value, this.selectRateRight);
   }
 
   changeCurrencyTwo(value) {
-    this.selectRateTwo = value;
+    this.selectRateRight = value;
 
-    this.multiply = this.rateService.changeCurrency(value, this.selectRateOne);
+    this.multiply = this.rateService.changeCurrency(value, this.selectRateLeft);
   }
 
   toCalculate(obtainedValue, ownSelected, anotherSelected) {
@@ -37,16 +37,24 @@ export class CcTubeComponent implements OnInit {
       (ownSelected === 'ua' && anotherSelected === 'eur') ||
       anotherSelected === 'usd'
     ) {
-      this.inputTwo = +(obtainedValue / this.multiply).toFixed(2);
+      return +(obtainedValue / this.multiply).toFixed(2);
     } else {
-      this.inputTwo = +(obtainedValue * this.multiply).toFixed(2);
+      return +(obtainedValue * this.multiply).toFixed(2);
     }
   }
 
   changeInputLeft(amount) {
-    this.toCalculate(amount, this.selectRateOne, this.selectRateTwo);
+    this.inputRight = this.toCalculate(
+      amount,
+      this.selectRateLeft,
+      this.selectRateRight
+    );
   }
   changeInputRight(amount) {
-    this.toCalculate(amount, this.selectRateTwo, this.selectRateOne);
+    this.inputLeft = this.toCalculate(
+      amount,
+      this.selectRateRight,
+      this.selectRateLeft
+    );
   }
 }

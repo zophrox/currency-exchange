@@ -61,7 +61,7 @@ export class RateService {
     }
     if (value === 'eur') {
       if (otherSelect === 'usd') {
-        return this.eur / this.usd;
+        return this.usd / this.eur;
       }
 
       if (otherSelect === 'eur') {

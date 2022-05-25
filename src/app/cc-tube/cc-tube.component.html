@@ -9,15 +9,15 @@
           name="firstInput"
           type="number"
           (ngModelChange)="changeInputLeft($event)"
-          [(ngModel)]="inputOne"
+          [(ngModel)]="inputLeft"
         />
       </mat-form-field>
     </form>
     <mat-form-field>
-      <mat-label style="font-size: 15px">{{ currencySelectionOne }}</mat-label>
+      <mat-label style="font-size: 15px">{{ currencySelectionLeft }}</mat-label>
       <mat-select
-        [(ngModel)]="currencySelectionOne"
-        [(value)]="currencySelectionOne"
+        [(ngModel)]="currencySelectionLeft"
+        [(value)]="currencySelectionLeft"
         (ngModelChange)="changeCurrencyOne($event)"
       >
         <mat-option value="eur"
@@ -54,16 +54,16 @@
           name="secondInput"
           type="number"
           (ngModelChange)="changeInputRight($event)"
-          [(ngModel)]="inputTwo"
+          [(ngModel)]="inputRight"
         />
       </mat-form-field>
     </form>
 
     <mat-form-field>
-      <mat-label style="font-size: 15px">{{ currencySelectionTwo }}</mat-label>
+      <mat-label style="font-size: 15px">{{ currencySelectionRight }}</mat-label>
       <mat-select
-        [(ngModel)]="currencySelectionTwo"
-        [(value)]="currencySelectionTwo"
+        [(ngModel)]="currencySelectionRight"
+        [(value)]="currencySelectionRight"
         (ngModelChange)="changeCurrencyTwo($event)"
       >
         <mat-option value="eur"
