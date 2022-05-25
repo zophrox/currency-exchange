@@ -14,16 +14,17 @@ export class HeaderComponent implements OnInit {
   date: any = new Date();
 
   constructor(private rateService: RateService, public datePipe: DatePipe) {
-    this.date = this.datePipe.transform(this.date, 'yyyy-MM-dd');
+    this.date = this.datePipe.transform(this.date, 'MM-dd-yyyy');
   }
 
   ngOnInit() {
     this.rateService.getRate();
-    this.rateService.usd.subscribe((usd) => {
+    this.rateService.usdEmit.subscribe((usd) => {
       this.usd = usd;
     });
-    this.rateService.eur.subscribe((eur) => {
+    this.rateService.eurEmit.subscribe((eur) => {
       this.eur = eur;
     });
+    
   }
 }

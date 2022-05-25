@@ -1,4 +1,3 @@
-
 <h1>Calculator</h1>
 
 <div class="calculator">
@@ -9,32 +8,43 @@
           matInput
           name="firstInput"
           type="number"
-          (ngModelChange)="changeInputOne($event)"
+          (ngModelChange)="changeInputLeft($event)"
           [(ngModel)]="inputOne"
         />
       </mat-form-field>
     </form>
     <mat-form-field>
-      <mat-label style="font-size: 15px;">{{currencySelectionOne}}</mat-label>
+      <mat-label style="font-size: 15px">{{ currencySelectionOne }}</mat-label>
       <mat-select
         [(ngModel)]="currencySelectionOne"
         [(value)]="currencySelectionOne"
         (ngModelChange)="changeCurrencyOne($event)"
       >
         <mat-option value="eur"
-          ><span class="flag-icon flag-icon-eu flag-icon-squared" style="width: 25px; height: 25px;"></span
+          ><span
+            class="flag-icon flag-icon-eu flag-icon-squared"
+            style="width: 25px; height: 25px"
+          ></span
         ></mat-option>
         <mat-option value="usd"
-          ><span class="flag-icon flag-icon-us flag-icon-squared" style="width: 25px; height: 25px;"></span
+          ><span
+            class="flag-icon flag-icon-us flag-icon-squared"
+            style="width: 25px; height: 25px"
+          ></span
         ></mat-option>
         <mat-option value="ua"
-          ><span class="flag-icon flag-icon-ua flag-icon-squared" style="width: 25px; height: 25px;"></span
+          ><span
+            class="flag-icon flag-icon-ua flag-icon-squared"
+            style="width: 25px; height: 25px"
+          ></span
         ></mat-option>
       </mat-select>
     </mat-form-field>
   </div>
   <div class="icon">
-    <mat-icon aria-hidden="false" aria-label="Example home icon">swap_horiz</mat-icon>
+    <mat-icon aria-hidden="false" aria-label="Example home icon"
+      >swap_horiz</mat-icon
+    >
   </div>
   <div class="blockSelect">
     <form class="example-form">
@@ -43,33 +53,42 @@
           matInput
           name="secondInput"
           type="number"
-          (ngModelChange)="changeInputTwo($event)"
+          (ngModelChange)="changeInputRight($event)"
           [(ngModel)]="inputTwo"
         />
       </mat-form-field>
     </form>
 
     <mat-form-field>
-      <mat-label style="font-size: 15px;">{{ currencySelectionTwo }}</mat-label>
+      <mat-label style="font-size: 15px">{{ currencySelectionTwo }}</mat-label>
       <mat-select
         [(ngModel)]="currencySelectionTwo"
         [(value)]="currencySelectionTwo"
         (ngModelChange)="changeCurrencyTwo($event)"
       >
         <mat-option value="eur"
-          ><span class="flag-icon flag-icon-eu flag-icon-squared" style="width: 25px; height: 25px;"></span
+          ><span
+            class="flag-icon flag-icon-eu flag-icon-squared"
+            style="width: 25px; height: 25px"
+          ></span
         ></mat-option>
         <mat-option value="usd"
-          ><span class="flag-icon flag-icon-us flag-icon-squared" style="width: 25px; height: 25px;"></span
+          ><span
+            class="flag-icon flag-icon-us flag-icon-squared"
+            style="width: 25px; height: 25px"
+          ></span
         ></mat-option>
         <mat-option value="ua" select
-          ><span class="flag-icon flag-icon-ua flag-icon-squared" style="width: 25px; height: 25px;"></span
+          ><span
+            class="flag-icon flag-icon-ua flag-icon-squared"
+            style="width: 25px; height: 25px"
+          ></span
         ></mat-option>
       </mat-select>
     </mat-form-field>
   </div>
 </div>
 
-<div class="footer"><a href="https://bank.gov.ua/en/">National Bank of Ukraina</a></div>
-
-
+<div class="footer">
+  <a href="https://bank.gov.ua/en/">National Bank of Ukraina</a>
+</div>
